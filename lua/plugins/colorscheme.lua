@@ -23,11 +23,14 @@ return {
       },
     },
   },
+  {
+    "mellow-theme/mellow.nvim",
+  },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "mellow",
     },
   },
 }
