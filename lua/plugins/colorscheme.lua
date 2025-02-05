@@ -23,11 +23,22 @@ return {
       },
     },
   },
+  {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = { variant = "oled" },
+  },
+  {
+    "mellow-theme/mellow.nvim",
+    lazy = false,
+    priority = 1000,
+  },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "oldworld",
     },
   },
 }

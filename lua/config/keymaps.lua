@@ -3,4 +3,5 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<C-c>", "ciw")
-vim.keymap.set("n", "yc", "yygccp")
+-- vim.keymap.set("n", "yc", "yygccp")
+vim.keymap.set("n", "yc", "yy<cmd>normal gcc<CR>p")
