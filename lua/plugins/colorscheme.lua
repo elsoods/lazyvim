@@ -5,6 +5,7 @@ return {
     init = function()
       require("cyberdream").setup({
         italic_comments = true,
+        borderless_pickers = true,
       })
     end,
   },
@@ -38,7 +39,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "oldworld",
+      colorscheme = "cyberdream",
     },
   },
 }
