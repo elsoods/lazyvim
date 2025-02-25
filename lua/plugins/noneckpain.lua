@@ -6,5 +6,6 @@ return {
     opts = {
       width = 150,
     },
+    enabled = false,
   },
 }
