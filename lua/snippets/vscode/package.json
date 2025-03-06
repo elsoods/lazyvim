@@ -1,0 +1,13 @@
+{
+  "name": "customsnips-soods",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./snips/vue.json"
+      }
+    ]
+  }
+}
