@@ -5,7 +5,7 @@
       "appInsights.trackEvent({",
       "  name: \"${1:Name}\",",
       "  properties: {",
-      "    ${2:Property} \"${3:Value}\",",
+      "    ${2:Property}: \"${3:Value}\",",
       "  },",
       "});"
     ],
