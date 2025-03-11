@@ -8,7 +8,7 @@ return {
       win_options = {
         wrap = true,
       },
-      delete_to_trash = false,
+      delete_to_trash = true,
     },
     -- Optional dependencies
     dependencies = { { "echasnovski/mini.icons", opts = {} } },

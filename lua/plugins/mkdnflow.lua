@@ -6,5 +6,6 @@ return {
         -- Config goes here; leave blank for defaults
       })
     end,
+    ft = { "markdown" },
   },
 }
