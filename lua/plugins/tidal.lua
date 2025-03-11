@@ -1,5 +1,6 @@
 return {
   {
-    'tidalcycles/vim-tidal'
+    "tidalcycles/vim-tidal",
+    ft = "tidal",
   },
 }

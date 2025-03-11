@@ -25,17 +25,6 @@ return {
     },
   },
   {
-    "dgox16/oldworld.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = { variant = "oled" },
-  },
-  {
-    "mellow-theme/mellow.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
@@ -78,26 +67,6 @@ return {
           }
         end,
       })
-    end,
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-  },
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "sainnhe/gruvbox-material",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
-      vim.g.gruvbox_material_background = "hard"
     end,
   },
   -- Configure LazyVim to load gruvbox
