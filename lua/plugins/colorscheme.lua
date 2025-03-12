@@ -25,6 +25,27 @@ return {
     },
   },
   {
+    "navarasu/onedark.nvim",
+    -- priority = 1000,
+    opts = {
+      style = "warmer",
+      -- color_overrides = {
+      --   mocha = {
+      --     base = "#000000",
+      --     mantle = "#000000",
+      --     crust = "#000000",
+      --   },
+      -- },
+    },
+  },
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    -- Add in any other configuration;
+    --   event = foo,
+    --   config = bar
+    --   end,
+  },
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
@@ -73,7 +94,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon",
+      colorscheme = "oxocarbon",
     },
   },
 }
