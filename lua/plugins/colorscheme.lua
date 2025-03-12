@@ -26,7 +26,7 @@ return {
   },
   {
     "navarasu/onedark.nvim",
-    -- priority = 1000,
+    priority = 1000,
     opts = {
       style = "warmer",
       -- color_overrides = {
@@ -37,13 +37,6 @@ return {
       --   },
       -- },
     },
-  },
-  {
-    "nyoom-engineering/oxocarbon.nvim",
-    -- Add in any other configuration;
-    --   event = foo,
-    --   config = bar
-    --   end,
   },
   {
     "rebelot/kanagawa.nvim",
@@ -94,7 +87,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "oxocarbon",
+      colorscheme = "onedark",
     },
   },
 }
