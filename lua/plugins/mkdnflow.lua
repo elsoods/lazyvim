@@ -2,9 +2,6 @@ return {
   {
     "jakewvincent/mkdnflow.nvim",
     config = function()
-      local cwd = vim.fn.getcwd() -- Get the initial working directory
-      local buf_path = vim.fn.expand("%:p") -- Get the absolute path of the current buffer
-      local relative_path = vim.fn.relpath(buf_path, cwd) -- Calculate the relative path to the cwd
       require("mkdnflow").setup({
         perspective = {
           priority = "root",
@@ -24,7 +21,6 @@ return {
             text = text:gsub(" ", "-")
             text = text:lower()
             -- text = os.date("%Y-%m-%d_") .. text
-            text = relative_path .. "/" .. text
             return text
           end,
           create_on_follow_failure = true,
