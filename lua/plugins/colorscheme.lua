@@ -6,6 +6,7 @@ return {
       require("cyberdream").setup({
         italic_comments = true,
         borderless_pickers = true,
+        transparent = true,
       })
     end,
   },
@@ -100,7 +101,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon",
+      colorscheme = "cyberdream",
     },
   },
 }
