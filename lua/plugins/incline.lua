@@ -1,38 +1,39 @@
 return {
   {
-    'b0o/incline.nvim',
+    "b0o/incline.nvim",
+    enabled = false,
     config = function()
-      local helpers = require 'incline.helpers'
-      local devicons = require 'nvim-web-devicons'
-      require('incline').setup {
+      local helpers = require("incline.helpers")
+      local devicons = require("nvim-web-devicons")
+      require("incline").setup({
         window = {
           padding = 0,
           margin = { horizontal = 0 },
         },
         render = function(props)
-          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
-          if filename == '' then
-            filename = '[No Name]'
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if filename == "" then
+            filename = "[No Name]"
           end
           local ft_icon, ft_color = devicons.get_icon_color(filename)
           local modified = vim.bo[props.buf].modified
           if props.focused then
-            guibgw = '#45475a'
+            guibgw = "#45475a"
           else
-            guibgw = '#181825'
-            ft_color = '#181825'
+            guibgw = "#181825"
+            ft_color = "#181825"
           end
           return {
-            ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
-            ' ',
-            { filename, gui = modified and 'bold,italic' or 'bold' },
-            ' ',
+            ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
+            " ",
+            { filename, gui = modified and "bold,italic" or "bold" },
+            " ",
             guibg = guibgw,
           }
         end,
-      }
+      })
     end,
     -- Optional: Lazy load Incline
-    event = 'VeryLazy',
+    event = "VeryLazy",
   },
 }

@@ -34,7 +34,11 @@ return {
             },
             after = {},
           },
-          template = "# {{ title }}",
+          template = [[---
+title: "{{title}}"
+description: ""
+tags:
+---]],
         },
       })
     end,

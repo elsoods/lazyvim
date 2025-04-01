@@ -7,6 +7,7 @@ return {
           {
             "mode",
             icon = "",
+            -- icon = "",
             fmt = function(mode)
               return mode:lower()
             end,
