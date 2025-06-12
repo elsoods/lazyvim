@@ -11,6 +11,10 @@ return {
             --   return mode:lower()
             -- end,
             color = function(section)
+              local enable_mode_colors = false
+              if not enable_mode_colors then
+                return nil
+              end
               local currMode = vim.fn.mode()
 
               --require 'notify'(currMode)
@@ -42,7 +46,7 @@ return {
         section_separators = { left = "", right = "" },
         -- component_separators = { left = "|", right = "|" },
         component_separators = { left = "|", right = "|" },
-        theme = "auto",
+        theme = "tokyonight",
       },
     },
   },
