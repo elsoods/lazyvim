@@ -6,12 +6,12 @@ return {
         lualine_a = {
           {
             "mode",
-            icon = " ",
+            icon = "",
             -- fmt = function(mode)
             --   return mode:lower()
             -- end,
             color = function(section)
-              local enable_mode_colors = false
+              local enable_mode_colors = true
               if not enable_mode_colors then
                 return nil
               end
@@ -46,7 +46,7 @@ return {
         section_separators = { left = "", right = "" },
         -- component_separators = { left = "|", right = "|" },
         component_separators = { left = "|", right = "|" },
-        theme = "tokyonight",
+        theme = "auto",
       },
     },
   },

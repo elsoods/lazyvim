@@ -64,13 +64,9 @@ return {
     --   color_overrides = {
     --     mocha = {
     --       base = "#000000",
-    --       mantle = "#000000",
-    --       crust = "#000000",
+    --       mantle = "#292c3c",
+    --       crust = "#292c3c",
     --     },
-    --   },
-    --   navic = {
-    --     enabled = true,
-    --     custom_bg = "NONE", -- "lualine" will set background to mantle
     --   },
     -- },
   },
@@ -78,6 +74,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "catppuccin-latte",
       colorscheme = "catppuccin-mocha",
     },
   },
