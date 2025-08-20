@@ -35,6 +35,30 @@ return {
     },
   },
   {
+    "mcauley-penney/techbase.nvim",
+    opts = {
+      italic_comments = true,
+      plugin_support = {
+        aerial = true,
+        blink = true,
+        edgy = true,
+        gitsigns = true,
+        hl_match_area = true,
+        lazy = true,
+        lualine = true,
+        mason = true,
+        mini_cursorword = true,
+        nvim_cmp = true,
+        vim_illuminate = true,
+        visual_whitespace = true,
+      },
+    },
+    init = function()
+      vim.cmd.colorscheme("techbase")
+    end,
+    priority = 1000,
+  },
+  {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
@@ -55,20 +79,6 @@ return {
         end,
       })
     end,
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    -- opts = {
-    --   color_overrides = {
-    --     mocha = {
-    --       base = "#000000",
-    --       mantle = "#292c3c",
-    --       crust = "#292c3c",
-    --     },
-    --   },
-    -- },
   },
   -- Configure LazyVim to load gruvbox
   {
