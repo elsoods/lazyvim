@@ -11,7 +11,7 @@ return {
       delete_to_trash = true,
     },
     -- Optional dependencies
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     keys = {
       { "<leader>o", "<cmd>Oil --preview <cr>", desc = "Open Oil" },
     },

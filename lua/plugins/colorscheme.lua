@@ -80,12 +80,26 @@ return {
       })
     end,
   },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    -- Add in any other configuration;
+    --   event = foo,
+    --   config = bar
+    --   end,
+  },
+  -- Install without configuration
+  { "projekt0n/github-nvim-theme", name = "github-theme" },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "catppuccin-latte",
       colorscheme = "moonfly",
+      -- colorscheme = "github_dark_default",
     },
   },
 }
