@@ -1,6 +1,7 @@
 return {
   {
     "b0o/incline.nvim",
+    enabled = false,
     config = function()
       local helpers = require("incline.helpers")
       local devicons = require("nvim-web-devicons")

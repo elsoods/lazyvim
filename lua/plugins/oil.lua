@@ -9,6 +9,12 @@ return {
         wrap = true,
       },
       delete_to_trash = true,
+      columns = {
+        "icon",
+        -- "permissions",
+        -- "size",
+        "mtime",
+      },
     },
     -- Optional dependencies
     dependencies = { { "nvim-mini/mini.icons", opts = {} } },

@@ -2,12 +2,12 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
-      opts.sections = opts.sections or {}
-      opts.sections.lualine_c = opts.sections.lualine_c or {}
+      -- opts.sections = opts.sections or {}
+      -- opts.sections.lualine_c = opts.sections.lualine_c or {}
       opts.sections.lualine_a = {
         {
           "mode",
-          icon = "",
+          icon = "",
           --   color = function(section)
           --     local enable_mode_colors = true
           --     if not enable_mode_colors then
@@ -40,7 +40,7 @@ return {
         component_separators = { left = "|", right = "|" },
         theme = "auto",
       }
-      table.remove(opts.sections.lualine_c)
+      -- table.remove(opts.sections.lualine_c)
       return opts
     end,
   },
