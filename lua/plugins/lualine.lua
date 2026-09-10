@@ -8,30 +8,6 @@ return {
         {
           "mode",
           icon = "",
-          --   color = function(section)
-          --     local enable_mode_colors = true
-          --     if not enable_mode_colors then
-          --       return nil
-          --     end
-          --     local currMode = vim.fn.mode()
-          --     if currMode == "n" then
-          --       return { bg = "#3fc5b7", fg = "#282828" }
-          --     elseif currMode == "i" then
-          --       return { bg = "#83c746", fg = "#282828" }
-          --     elseif currMode == "v" then
-          --       return { bg = "#eb6eb7", fg = "#282828" }
-          --     elseif currMode == "V" then
-          --       return { bg = "#eb6eb7", fg = "#282828" }
-          --     elseif currMode == "\22" then
-          --       return { bg = "#eb6eb7", fg = "#282828" }
-          --     elseif currMode == "c" then
-          --       return { bg = "#e67f43", fg = "#282828" }
-          --     elseif currMode == "t" then
-          --       return { bg = "#e67f43", fg = "#282828" }
-          --     elseif currMode == "r" then
-          --       return { bg = "#ed4a46", fg = "#282828" }
-          --     end
-          --   end,
         },
       }
       opts.sections.lualine_z = {}
@@ -42,6 +18,27 @@ return {
       }
       -- table.remove(opts.sections.lualine_c)
       return opts
+    end,
+    -- Lazyvim Colorscheme fix
+    config = function(_, opts)
+      require("lualine").setup(opts)
+
+      local function fix_statusline_leak()
+        local ok, lualine_hl = pcall(vim.api.nvim_get_hl, 0, { name = "lualine_c_normal" })
+        if not ok or not lualine_hl.bg then
+          return
+        end
+        vim.api.nvim_set_hl(0, "StatusLine", { bg = lualine_hl.bg, fg = lualine_hl.fg })
+        vim.api.nvim_set_hl(0, "StatusLineNC", { bg = lualine_hl.bg, fg = lualine_hl.fg })
+      end
+
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        group = vim.api.nvim_create_augroup("FixStatuslineLeak", { clear = true }),
+        callback = fix_statusline_leak,
+      })
+
+      -- Apply immediately too, since ColorScheme may have already fired before this ran
+      fix_statusline_leak()
     end,
   },
 }

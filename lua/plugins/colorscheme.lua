@@ -20,19 +20,18 @@ return {
     priority = 1000,
     config = function()
       require("cyberdream").setup({
-        variant = "light",
-        transparent = true,
+        -- transparent = true,
         italic_comments = true,
         hide_fillchars = true,
-        terminal_colors = false,
+        terminal_colors = true,
         cache = true,
         borderless_pickers = true,
-        overrides = function(c)
-          return {
-            CursorLine = { bg = c.bg },
-            CursorLineNr = { fg = c.magenta },
-          }
-        end,
+        -- overrides = function(c)
+        --   return {
+        --     CursorLine = { bg = c.bg },
+        --     CursorLineNr = { fg = c.magenta },
+        --   }
+        -- end,
       })
     end,
   },
@@ -53,7 +52,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "teide-darker",
+      colorscheme = "moonfly",
     },
   },
 }

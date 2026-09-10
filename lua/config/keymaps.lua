@@ -3,3 +3,10 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "yc", "yy<cmd>normal gcc<CR>p")
+
+local wiki = vim.fn.expand("~/Documents/notes/wiki")
+
+vim.keymap.set("n", "<leader>ww", function()
+  vim.cmd("edit " .. wiki .. "/index.md")
+  vim.cmd("lcd %:p:h")
+end, { desc = "Open wiki index" })
