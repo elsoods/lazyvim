@@ -1,7 +1,7 @@
 return {
   {
     "jakewvincent/mkdnflow.nvim",
-    enable = false,
+    enabled = false,
     config = function()
       require("mkdnflow").setup({
         perspective = {

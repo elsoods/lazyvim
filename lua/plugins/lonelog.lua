@@ -2,6 +2,7 @@ return {
   {
     "Django0033/lonelog.nvim",
     ft = { "md" },
+    enabled = false,
     cmd = {
       "Lonelog",
       "LonelogOracle",
