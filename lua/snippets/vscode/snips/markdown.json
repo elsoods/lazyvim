@@ -1,0 +1,232 @@
+{
+  "Lonelog: Code block": {
+    "prefix": "llblock",
+    "body": ["```lonelog", "${1:content}", "```", "$0"],
+    "description": "Lonelog fenced code block"
+  },
+  "Lonelog: Scene": {
+    "prefix": "llscene",
+    "body": [
+      "### S${1:1} *${2:Location, time}*",
+      "",
+      "```lonelog",
+      "$0",
+      "```"
+    ],
+    "description": "Scene heading + lonelog block"
+  },
+  "Lonelog: Session": {
+    "prefix": "llsession",
+    "body": [
+      "## Session ${1:1}",
+      "*Date: ${2:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE} | Duration: ${3:1h}*",
+      "",
+      "**Recap:** ${4}",
+      "",
+      "**Goals:** ${5}",
+      "",
+      "$0"
+    ],
+    "description": "Session header"
+  },
+  "Lonelog: Action sequence": {
+    "prefix": "llact",
+    "body": [
+      "@ ${1:Action}",
+      "d: ${2:Skill d6=? vs TN ?} -> ${3|Success,Fail|}",
+      "=> $0"
+    ],
+    "description": "@ action, d: roll, => consequence"
+  },
+  "Lonelog: Oracle sequence": {
+    "prefix": "lloracle",
+    "body": ["? ${1:Question?}", "-> ${2:Yes, but...} (${3:d6=?})", "=> $0"],
+    "description": "? question, -> answer, => consequence"
+  },
+  "Lonelog: Oracle with dice": {
+    "prefix": "lloracled",
+    "body": ["? ${1:Question?}", "d: ${2:d6=? vs 4+} -> ${3:Yes}", "=> $0"],
+    "description": "Oracle with recorded roll (v1.5 style)"
+  },
+  "Lonelog: Table roll": {
+    "prefix": "lltbl",
+    "body": [
+      "? ${1:Question?}",
+      "tbl: ${2:Table} ${3:d100=?} -> ${4:Result}",
+      "=> $0"
+    ],
+    "description": "Table lookup sequence"
+  },
+  "Lonelog: Inline table": {
+    "prefix": "lltabledef",
+    "body": [
+      "tbl: ${1:Name} (d6)",
+      "  1: ${2}",
+      "  2: ${3}",
+      "  3: ${4}",
+      "  4: ${5}",
+      "  5: ${6}",
+      "  6: ${7}",
+      "$0"
+    ],
+    "description": "Inline d6 table definition"
+  },
+  "Lonelog: Generator": {
+    "prefix": "llgen",
+    "body": [
+      "gen: ${1:NPC}",
+      "  ${2:Role}: d6=${3:?} -> ${4}",
+      "  ${5:Trait}: d6=${6:?} -> ${7}",
+      "  ${8:Want}: d6=${9:?} -> ${10}",
+      "=> $0"
+    ],
+    "description": "Multi-line generator"
+  },
+  "Lonelog: Tag": {
+    "prefix": "lltag",
+    "body": "[${1|N,L,PC,Thread,E,#N,#L|}:${2:Name}|${3:tag}]$0",
+    "description": "Generic [Type:Name|tag] tag"
+  },
+  "Lonelog: Meter": {
+    "prefix": "llmeter",
+    "body": "[${1|Clock,Track,E|}:${2:Name} ${3:0}/${4:6}]$0",
+    "description": "Clock / track / event X/Y"
+  },
+  "Lonelog: Timer": {
+    "prefix": "lltimer",
+    "body": "[Timer:${1:Name} ${2:3}]$0",
+    "description": "Countdown timer"
+  },
+  "Lonelog: Thread": {
+    "prefix": "llthread",
+    "body": "[Thread:${1:Name}|${2|Open,Closed,Abandoned|}]$0",
+    "description": "Story thread"
+  },
+  "Lonelog: Actor": {
+    "prefix": "llactor",
+    "body": "@(${1:Name}) $0",
+    "description": "Action by a named actor"
+  },
+  "Lonelog: Lead/Assist": {
+    "prefix": "lllead",
+    "body": "@(${1:Helper} > ${2:Roller}) $0",
+    "description": "Lead/assist action"
+  },
+  "Lonelog: Joint action": {
+    "prefix": "lljoint",
+    "body": "@(${1:A}+${2:B}) $0",
+    "description": "Joint action"
+  },
+  "Lonelog: Meta note": {
+    "prefix": "llnote",
+    "body": "(${1|note,reflection,house rule,reminder,question|}: ${2})$0",
+    "description": "Out-of-character meta note"
+  },
+  "Lonelog: Dialogue": {
+    "prefix": "lldialogue",
+    "body": ["N (${1:Name}): \"${2}\"", "PC: \"$0\""],
+    "description": "Dialogue exchange"
+  },
+  "Lonelog: Narrative block": {
+    "prefix": "llnarr",
+    "body": ["\\\\---", "${1:text}", "---\\\\", "$0"],
+    "description": "In-fiction document block"
+  },
+  "Lonelog: Campaign front matter": {
+    "prefix": "llcampaign",
+    "body": [
+      "---",
+      "title: ${1}",
+      "ruleset: ${2}",
+      "genre: ${3}",
+      "player: ${4}",
+      "pcs: ${5}",
+      "start_date: ${6:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE}",
+      "last_update: ${6}",
+      "tools: ${7}",
+      "themes: ${8}",
+      "tone: ${9}",
+      "notes: ${10}",
+      "---",
+      "",
+      "# ${1}",
+      "$0"
+    ],
+    "description": "Campaign YAML front matter"
+  },
+
+  "Markdown: Code block": {
+    "prefix": "cb",
+    "body": ["```${1:lang}", "${2:code}", "```", "$0"],
+    "description": "Fenced code block"
+  },
+  "Markdown: Link": {
+    "prefix": "link",
+    "body": "[${1:text}](${2:url})$0",
+    "description": "Inline link"
+  },
+  "Markdown: Image": {
+    "prefix": "img",
+    "body": "![${1:alt}](${2:path})$0",
+    "description": "Image"
+  },
+  "Markdown: Table": {
+    "prefix": "table",
+    "body": [
+      "| ${1:Col 1} | ${2:Col 2} | ${3:Col 3} |",
+      "| --- | --- | --- |",
+      "| ${4} | ${5} | ${6} |",
+      "$0"
+    ],
+    "description": "3-column table"
+  },
+  "Markdown: Task list": {
+    "prefix": "todo",
+    "body": ["- [ ] ${1:task}", "- [ ] $0"],
+    "description": "Checkbox list"
+  },
+  "Markdown: Callout": {
+    "prefix": "callout",
+    "body": [
+      "> [!${1|NOTE,TIP,IMPORTANT,WARNING,CAUTION|}]",
+      "> ${2:text}",
+      "$0"
+    ],
+    "description": "GitHub-style callout"
+  },
+  "Markdown: Front matter": {
+    "prefix": "fm",
+    "body": [
+      "---",
+      "title: ${1}",
+      "date: ${2:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE}",
+      "tags: [${3}]",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "YAML front matter"
+  },
+  "Markdown: Collapsible": {
+    "prefix": "details",
+    "body": [
+      "<details>",
+      "<summary>${1:Summary}</summary>",
+      "",
+      "$0",
+      "",
+      "</details>"
+    ],
+    "description": "Collapsible section"
+  },
+  "Markdown: Mermaid": {
+    "prefix": "mermaid",
+    "body": [
+      "```mermaid",
+      "${1|flowchart TD,sequenceDiagram,classDiagram,erDiagram|}",
+      "    $0",
+      "```"
+    ],
+    "description": "Mermaid diagram block"
+  }
+}
