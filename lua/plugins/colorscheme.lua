@@ -8,15 +8,20 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
     priority = 1000,
     opts = {
       style = "day",
     },
   },
   {
+    "miikanissi/modus-themes.nvim",
+    priority = 1000,
+    opts = {
+      style = "modus_vivendi",
+    },
+  },
+  {
     "scottmckendry/cyberdream.nvim",
-    lazy = false,
     enabled = false,
     priority = 1000,
     config = function()
@@ -42,7 +47,6 @@ return {
   },
   {
     "serhez/teide.nvim",
-    lazy = false,
     priority = 1000,
     opts = {
       on_highlights = function(hl, c)
@@ -53,7 +57,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "moonfly",
+      colorscheme = "modus",
     },
   },
 }
