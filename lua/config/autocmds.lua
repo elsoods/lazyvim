@@ -19,3 +19,5 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.o.showbreak = ""
   end,
 })
+
+require("config.lonelog")

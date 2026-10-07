@@ -10,3 +10,8 @@ vim.keymap.set("n", "<leader>ww", function()
   vim.cmd("edit " .. wiki .. "/index.md")
   vim.cmd("lcd %:p:h")
 end, { desc = "Open wiki index" })
+
+local daily = require("config.daily")
+vim.keymap.set("n", "<leader>jt", function()
+  daily.open(0, true)
+end, { desc = "Today's note" })

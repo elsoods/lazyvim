@@ -7,6 +7,12 @@
           "vue"
         ],
         "path": "./snips/vue.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./snips/markdown.json"
       }
     ]
   }

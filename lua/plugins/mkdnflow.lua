@@ -1,48 +1,48 @@
 return {
   {
     "jakewvincent/mkdnflow.nvim",
-    enabled = false,
+    -- enabled = true,
     config = function()
       require("mkdnflow").setup({
-        perspective = {
-          priority = "root",
-          fallback = "current",
-          root_tell = "index.md",
-          nvim_wd_heel = false,
-          update = true,
-        },
+        modules = { completion = true },
         links = {
-          style = "markdown",
-          name_is_source = false,
           conceal = true,
-          context = 0,
-          implicit_extension = nil,
-          transform_implicit = false,
-          transform_explicit = function(text)
+          transform_on_create = function(text)
             text = text:gsub(" ", "-")
             text = text:lower()
-            -- text = os.date("%Y-%m-%d_") .. text
             return text
           end,
-          create_on_follow_failure = true,
+        },
+        path_resolution = {
+          primary = "root",
+          root_marker = "index.md",
+          -- sync_cwd = true,
         },
         new_file_template = {
-          use_template = true,
-          placeholders = {
-            before = {
-              title = "link_title",
-              date = "os_date",
-            },
-            after = {},
-          },
-          template = [[---
-title: "{{title}}"
-description: ""
-tags:
----]],
+          enabled = true,
+          template = "# {{ title }}",
+          --           template = [[---
+          -- title: "{{title}}"
+          -- description: ""
+          -- tags:
+          -- ---]],
         },
       })
     end,
     ft = { "markdown" },
+  },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      sources = {
+        default = { "mkdnflow" },
+        providers = {
+          mkdnflow = {
+            name = "Mkdnflow",
+            module = "mkdnflow.completion.blink",
+          },
+        },
+      },
+    },
   },
 }
