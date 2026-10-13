@@ -9,5 +9,6 @@ vim.g.moonflyWinSeparator = 2
 vim.g.snacks_animate = false
 vim.o.shell = "/usr/bin/zsh"
 vim.o.showbreak = "↪ "
+-- vim.opt.fillchars:append({ eob = "~" })
 
 opt.wrap = true
